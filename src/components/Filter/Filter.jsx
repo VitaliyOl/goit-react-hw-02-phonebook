@@ -1,12 +1,19 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { FilterInput } from './Filter.styled';
 
 export default function Filter({ filter, handleChange }) {
   return (
-    <input
+    <FilterInput
       name="filter"
       type="text"
       value={filter}
       onChange={handleChange}
-    ></input>
+    ></FilterInput>
   );
 }
+
+Filter.propTypes = {
+  filter: PropTypes.string.isRequired,
+  handleChange: PropTypes.func.isRequired,
+};
